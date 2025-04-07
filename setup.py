@@ -46,7 +46,7 @@ setup(name='baselines',
       author_email='gym@openai.com',
       version='0.1.6')
 
-
+'''
 # ensure there is some tensorflow build with version above 1.4
 import pkg_resources
 tf_pkg = None
@@ -55,6 +55,7 @@ for tf_pkg_name in ['tensorflow', 'tensorflow-gpu', 'tf-nightly', 'tf-nightly-gp
         tf_pkg = pkg_resources.get_distribution(tf_pkg_name)
     except pkg_resources.DistributionNotFound:
         pass
-#assert tf_pkg is not None, 'TensorFlow needed, of version above 1.4'
+assert tf_pkg is not None, 'TensorFlow needed, of version above 1.4'
 from distutils.version import LooseVersion
 assert LooseVersion(re.sub(r'-?rc\d+$', '', tf_pkg.version)) >= LooseVersion('1.4.0')
+'''
